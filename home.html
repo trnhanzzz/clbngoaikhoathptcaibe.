@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLB Ngoại khóa Trường THPT Cái Bè</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Container chung */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            background: linear-gradient(135deg, #1e90ff, #00b4db, #00ddeb);
+            animation: gradientBG 10s ease infinite;
+            overflow: hidden;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('thptcaibe.jpg') no-repeat center/cover;
+            opacity: 0.4;
+            z-index: 0;
+            filter: blur(8px);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            padding: 50px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 25px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 1.2s ease forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .hero h1 {
+            font-size: 4em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #ffffff;
+            -webkit-text-stroke: 1.5px #00b4db;
+            text-shadow: 0 0 25px rgba(0, 0, 0, 0.8), 0 0 10px rgba(0, 191, 255, 0.7);
+            margin-bottom: 25px;
+        }
+        .hero p {
+            font-size: 1.5em;
+            font-weight: 400;
+            color: #f0f8ff;
+            margin-bottom: 40px;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        .hero-img {
+            width: 85%;
+            max-width: 900px;
+            height: auto;
+            border-radius: 25px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+            transition: transform 0.6s ease, box-shadow 0.6s ease;
+        }
+        .hero-img:hover {
+            transform: scale(1.08) translateY(-15px);
+            box-shadow: 0 35px 70px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Responsive Hero */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.8em; -webkit-text-stroke: 1px #00b4db; }
+            .hero p { font-size: 1.2em; }
+            .hero-img { max-width: 600px; }
+        }
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 2em; -webkit-text-stroke: 0.8px #00b4db; }
+            .hero p { font-size: 1em; }
+            .hero-img { max-width: 350px; }
+        }
+
+        /* Slogan Section */
+        .slogan {
+            padding: 100px 0;
+            background: #f0f8ff;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .slogan::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            left: -30%;
+            width: 160%;
+            height: 160%;
+            background: radial-gradient(circle, rgba(0, 191, 255, 0.2), transparent);
+            animation: glow 12s infinite;
+        }
+        @keyframes glow {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+            100% { transform: scale(1); }
+        }
+        .slogan .row {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+        .block_3 {
+            flex: 1;
+            min-width: 300px;
+            padding: 40px;
+            background: linear-gradient(145deg, #fff, #e6f3ff);
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s ease;
+        }
+        .block_3:hover {
+            transform: translateY(-20px) scale(1.05);
+            background: linear-gradient(145deg, #00b4db, #1e90ff);
+            color: white;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        }
+        .block_3 h2 {
+            font-size: 2em;
+            margin-bottom: 15px;
+            color: #1e90ff;
+            transition: color 0.5s;
+        }
+        .block_3:hover h2 {
+            color: white;
+        }
+        .block_3 p {
+            font-size: 1.2em;
+            color: #555;
+            transition: color 0.5s;
+        }
+        .block_3:hover p {
+            color: #f0f8ff;
+        }
+
+        /* Content Section */
+        .content-table {
+            padding: 100px 0;
+            background: linear-gradient(to bottom, #fff, #e6f3ff);
+        }
+        .content-row {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            margin-bottom: 100px;
+            flex-wrap: wrap;
+            position: relative;
+            overflow: hidden;
+        }
+        .content-row:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        .cell_text, .cell_img {
+            flex: 1;
+            min-width: 400px;
+        }
+        .cell_text h3 {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #00b4db;
+            background: linear-gradient(to right, #00b4db, #1e90ff);
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 25px;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .cell_text p, .cell_text ul {
+            font-size: 1.2em;
+            color: #333;
+            line-height: 1.9;
+        }
+        .cell_text ul {
+            list-style: none;
+            margin: 25px 0;
+        }
+        .cell_text ul li {
+            padding-left: 35px;
+            margin: 15px 0;
+            position: relative;
+            transition: transform 0.4s;
+        }
+        .cell_text ul li:hover {
+            transform: translateX(15px);
+        }
+        .cell_text ul li:before {
+            content: "➤";
+            color: #00ddeb;
+            position: absolute;
+            left: 0;
+            font-size: 1.3em;
+        }
+        .cell_img img {
+            width: 100%;
+            height: 500px;
+            object-fit: contain;
+            border-radius: 25px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            transition: all 0.6s ease;
+            background: #fff;
+            padding: 20px;
+        }
+        .cell_img img:hover {
+            transform: scale(1.06) translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+        }
+        a {
+            display: inline-block;
+            color: #1e90ff;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 30px;
+            background: rgba(30, 144, 255, 0.1);
+            transition: all 0.4s ease;
+        }
+        a:hover {
+            color: white;
+            background: #1e90ff;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Responsive Content */
+        @media (max-width: 768px) {
+            .content-row { flex-direction: column; }
+            .cell_text, .cell_img { min-width: 100%; }
+            .cell_img img { height: 400px; }
+        }
+        @media (max-width: 480px) {
+            .cell_img img { height: 300px; }
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #1e272e, #2c3e50);
+            color: white;
+            padding: 80px 0;
+            position: relative;
+            text-align: center;
+        }
+        footer .row {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        footer ul {
+            list-style: none;
+        }
+        footer ul li {
+            margin: 20px 0;
+            transition: transform 0.4s;
+        }
+        footer ul li:hover {
+            transform: translateX(15px);
+        }
+        footer a {
+            color: #e6f3ff;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: all 0.4s ease;
+        }
+        footer a:hover {
+            color: #00ddeb;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>CLB Ngoại Khóa THPT Cái Bè</h1>
+            <p>Chào mừng bạn đến với CLB Ngoại Khóa Trường THPT Cái Bè - nơi hội tụ những tâm hồn trẻ trung, năng động và đầy nhiệt huyết! Chúng tôi mang đến một sân chơi đa dạng để bạn khám phá đam mê, kiến tạo tương lai và bùng nổ thanh xuân qua những hoạt động ngoại khóa ý nghĩa. Từ thể thao đến nghệ thuật, từ kỹ năng sống đến những trải nghiệm đáng nhớ, CLB là nơi bạn có thể tỏa sáng và khẳng định bản thân.</p>
+            <img src="thptcaibe.jpg" alt="Trường THPT Cái Bè" class="hero-img">
+        </div>
+    </section>
+
+    <!-- Slogan Section -->
+    <section class="slogan">
+        <div class="container">
+            <div class="row">
+                <div class="block_3">
+                    <h2>Sáng Tạo</h2>
+                    <p>Mỗi thành viên đều được khuyến khích khơi dậy những ý tưởng đột phá, biến những giấc mơ thành hiện thực qua các hoạt động ngoại khóa đầy cảm hứng và sáng tạo.</p>
+                </div>
+                <div class="block_3">
+                    <h2>Đoàn Kết</h2>
+                    <p>Chúng tôi lan tỏa tinh thần đồng đội qua từng hoạt động, nơi các bạn học sinh học cách sẻ chia, hỗ trợ lẫn nhau để cùng đạt được những mục tiêu chung.</p>
+                </div>
+                <div class="block_3">
+                    <h2>Phát Triển</h2>
+                    <p>Tham gia CLB là cơ hội để bạn chạm tới đỉnh cao kỹ năng, từ kỹ năng cá nhân như giao tiếp, lãnh đạo đến các tài năng đặc biệt trong thể thao và nghệ thuật.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <div class="content-table">
+        <div class="container">
+            <div class="content-row">
+                <div class="cell_text">
+                    <h3>Học Tốt - Rèn Luyện Đỉnh Cao</h3>
+                    <p>CLB Ngoại Khóa THPT Cái Bè không chỉ là nơi để giải trí mà còn là môi trường tuyệt vời để bạn phát triển toàn diện. Tham gia ngay để khám phá đam mê, vượt qua mọi giới hạn của bản thân và cùng chúng tôi viết nên những trang thanh xuân bùng nổ! Từ những buổi học nhóm đầy hào hứng đến các hoạt động trải nghiệm thực tế, bạn sẽ tìm thấy cơ hội để học hỏi, trưởng thành và tạo dấu ấn riêng trong hành trình học đường.</p>
+                </div>
+                <div class="cell_img">
+                    <img src="hoctap.webp" alt="Hoạt động ngoại khóa">
+                </div>
+            </div>
+            <div class="content-row">
+                <div class="cell_img">
+                    <img src="thethao.jpg" alt="CLB Thể thao">
+                </div>
+                <div class="cell_text">
+                    <h3>CLB Thể Thao</h3>
+                    <p>CLB Thể Thao là nơi hội tụ những trái tim yêu vận động, nơi bạn có thể rèn luyện sức khỏe, bùng nổ năng lượng và trải nghiệm tinh thần đồng đội qua các bộ môn hấp dẫn. Hãy tham gia để cùng chúng tôi chinh phục những thử thách và tạo nên những khoảnh khắc đáng nhớ trên sân thi đấu!</p>
+                    <ul>
+                        <li><strong>Bóng chuyền:</strong> Phát triển sự nhanh nhẹn và phối hợp nhóm qua những pha bóng đầy kịch tính.</li>
+                        <li><strong>Cầu lông:</strong> Rèn luyện phản xạ và sự khéo léo trong từng cú đánh.</li>
+                        <li><strong>Điền kinh:</strong> Thách thức giới hạn bản thân với các cuộc thi chạy đầy tốc độ.</li>
+                        <li><strong>Võ thuật:</strong> Học cách tự vệ và xây dựng sự tự tin qua từng động tác mạnh mẽ.</li>
+                    </ul>
+                    <a href="thethao.html">Khám Phá Ngay</a>
+                </div>
+            </div>
+            <div class="content-row">
+                <div class="cell_text">
+                    <h3>CLB Văn Hóa - Nghệ Thuật</h3>
+                    <p>CLB Văn Hóa - Nghệ Thuật là không gian để bạn thỏa sức sáng tạo và thể hiện cá tính qua các lĩnh vực nghệ thuật đa dạng. Từ những nét vẽ đầy màu sắc đến những giai điệu say đắm, đây là nơi bạn có thể tìm thấy cảm hứng và lưu giữ những kỷ niệm thanh xuân rực rỡ.</p>
+                    <ul>
+                        <li><strong>Hội họa:</strong> Biến ý tưởng thành hiện thực qua từng nét cọ đầy sáng tạo.</li>
+                        <li><strong>Âm nhạc:</strong> Lan tỏa cảm xúc qua những bản nhạc đầy cảm hứng.</li>
+                        <li><strong>Văn học:</strong> Viết nên những câu chuyện và bài thơ mang đậm dấu ấn cá nhân.</li>
+                        <li><strong>Nhảy hiện đại:</strong> Thể hiện phong cách riêng qua những bước nhảy năng động.</li>
+                    </ul>
+                    <a href="vanhoa-nghethuat.html">Khám Phá Ngay</a>
+                </div>
+                <div class="cell_img">
+                    <img src="nghethuat.jpg" alt="CLB Văn hóa - Nghệ thuật">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div>
+                    <p>Liên Hệ:</p>
+                    <ul>
+                        <li>Điện thoại: 02733824355</li>
+                        <li>Website: <a href="home.html">CLB Ngoại Khóa THPT Cái Bè</a></li>
+                        <li>Tham gia: <a href="dangki.html">Mẫu Đăng Ký</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <p>Khám Phá Thêm:</p>
+                    <ul>
+                        <li><a href="thethao.html">CLB Thể Thao</a></li>
+                        <li><a href="vanhoa-nghethuat.html">CLB Văn Hóa - Nghệ Thuật</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

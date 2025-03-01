@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Ký Thành Viên CLB Ngoại Khóa THPT Cái Bè</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1e90ff, #00ddeb);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .form-container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            padding: 40px;
+            width: 100%;
+            max-width: 600px;
+            animation: fadeIn 1s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h3 {
+            text-align: center;
+            font-size: 2em;
+            font-weight: 700;
+            color: #1e90ff;
+            background: linear-gradient(to right, #1e90ff, #00ddeb);
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 1.1em;
+            color: #333;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        textarea,
+        select,
+        input[type="file"] {
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            background: #f9f9f9;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="date"]:focus,
+        textarea:focus,
+        select:focus,
+        input[type="file"]:focus {
+            border-color: #1e90ff;
+            box-shadow: 0 0 8px rgba(30, 144, 255, 0.3);
+            outline: none;
+            background: #fff;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .radio-group, .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .radio-group input[type="radio"],
+        .checkbox-group input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        .radio-group label,
+        .checkbox-group label {
+            font-size: 1em;
+            color: #555;
+            font-weight: 400;
+            cursor: pointer;
+        }
+
+        select {
+            appearance: none;
+            background: #f9f9f9 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"><path fill="%231e90ff" d="M7 10l5 5 5-5z"/></svg>') no-repeat right 10px center;
+        }
+
+        input[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #1e90ff, #00ddeb);
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2em;
+            font-weight: 600;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        input[type="submit"]:hover {
+            background: linear-gradient(135deg, #00ddeb, #1e90ff);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1em;
+            color: #1e90ff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #00ddeb;
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .form-container {
+                padding: 20px;
+            }
+            h3 { font-size: 1.5em; }
+            input[type="submit"] { font-size: 1em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h3>Đăng Ký Thành Viên<br>CLB Ngoại Khóa THPT Cái Bè</h3>
+        <form>
+            <div class="form-group">
+                <label for="hoten">Họ tên:</label>
+                <input type="text" id="hoten" name="hoten" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="ngaysinh">Ngày sinh:</label>
+                <input type="date" id="ngaysinh" name="ngaysinh" required>
+            </div>
+            <div class="form-group">
+                <label for="diachi">Địa chỉ:</label>
+                <textarea id="diachi" name="diachi" rows="5" required></textarea>
+            </div>
+            <div class="form-group">
+                <label>Giới tính:</label>
+                <div class="radio-group">
+                    <div>
+                        <input type="radio" id="nam" name="gioitinh" value="nam">
+                        <label for="nam">Nam</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="nu" name="gioitinh" value="nu">
+                        <label for="nu">Nữ</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Sở thích:</label>
+                <div class="checkbox-group">
+                    <div>
+                        <input type="checkbox" id="covua" name="sothich" value="covua">
+                        <label for="covua">Cờ vua</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="game" name="sothich" value="game">
+                        <label for="game">Trò chơi điện tử</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="dulich" name="sothich" value="dulich">
+                        <label for="dulich">Du lịch</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="camhoa" name="sothich" value="camhoa">
+                        <label for="camhoa">Cắm hoa</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="nauan" name="sothich" value="nauan">
+                        <label for="nauan">Nấu ăn</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="hoso">Hồ sơ đính kèm:</label>
+                <input type="file" id="hoso" name="hoso">
+            </div>
+            <div class="form-group">
+                <label for="clb">Đăng ký CLB:</label>
+                <select id="clb" name="clb" required>
+                    <option value="" disabled selected>Chọn CLB</option>
+                    <option value="bongda">Bóng đá</option>
+                    <option value="bongchuyen">Bóng chuyền</option>
+                    <option value="caulong">Cầu lông</option>
+                    <option value="vothuat">Võ thuật</option>
+                    <option value="hoihoa">Hội họa</option>
+                    <option value="amnhac">Âm nhạc</option>
+                    <option value="vanhoc">Văn học</option>
+                    <option value="nhayhiendai">Nhảy hiện đại</option>
+                </select>
+            </div>
+            <input type="submit" value="Đăng Ký">
+        </form>
+        <a href="home.html" class="back-link">Quay lại trang chủ</a>
+    </div>
+</body>
+</html>
